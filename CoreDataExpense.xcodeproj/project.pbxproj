@@ -16,6 +16,8 @@
 		682393D82267DBF800185645 /* CoreDataExpenseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682393D72267DBF800185645 /* CoreDataExpenseUITests.swift */; };
 		682393E62267DC4100185645 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682393E52267DC4100185645 /* ExpenseViewController.swift */; };
 		682393E82267DCB800185645 /* SingleExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682393E72267DCB800185645 /* SingleExpenseViewController.swift */; };
+		682393EB2269199E00185645 /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682393E92269199E00185645 /* Expense+CoreDataClass.swift */; };
+		682393EC2269199E00185645 /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682393EA2269199E00185645 /* Expense+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		682393D92267DBF800185645 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		682393E52267DC4100185645 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
 		682393E72267DCB800185645 /* SingleExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleExpenseViewController.swift; sourceTree = "<group>"; };
+		682393E92269199E00185645 /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = "<group>"; };
+		682393EA2269199E00185645 /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 		682393B32267DBF600185645 /* CoreDataExpense */ = {
 			isa = PBXGroup;
 			children = (
+				682393E92269199E00185645 /* Expense+CoreDataClass.swift */,
+				682393EA2269199E00185645 /* Expense+CoreDataProperties.swift */,
 				682393B42267DBF600185645 /* AppDelegate.swift */,
 				682393B82267DBF600185645 /* Main.storyboard */,
 				682393BE2267DBF800185645 /* Assets.xcassets */,
@@ -264,6 +270,8 @@
 			files = (
 				682393BD2267DBF600185645 /* CoreDataExpense.xcdatamodeld in Sources */,
 				682393B52267DBF600185645 /* AppDelegate.swift in Sources */,
+				682393EC2269199E00185645 /* Expense+CoreDataProperties.swift in Sources */,
+				682393EB2269199E00185645 /* Expense+CoreDataClass.swift in Sources */,
 				682393E62267DC4100185645 /* ExpenseViewController.swift in Sources */,
 				682393E82267DCB800185645 /* SingleExpenseViewController.swift in Sources */,
 			);

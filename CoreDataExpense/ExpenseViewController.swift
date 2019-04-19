@@ -7,29 +7,72 @@
 //
 
 import UIKit
+import CoreData
 
 class ExpenseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    
+  let dateFormatter = DateFormatter()
+    
     @IBOutlet weak var expenseTableView: UITableView!
     
-    let dateFormatter = DateFormatter()
+    var expenses = [Expense]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dateFormatter.timeStyle = .long
         dateFormatter.dateStyle = .long
-
+        
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest: NSFetchRequest<Expense> = Expense.fetchRequest()
+        
+        do{
+            expenses = try managedContext.fetch(fetchRequest)
+            
+            expenseTableView.reloadData()
+            
+        }catch{
+            print("Fetch could not be peerformed")
+        }
+        
+    }
+    
+    @IBAction func addExpense(_ sender: Any) {
+        performSegue(withIdentifier: "showExpense", sender: self)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return expenses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = expenseTableView.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath)
+        let expense = expenses[indexPath.row]
+        
+        cell.textLabel?.text = expense.name
+        
+        if let date = expense.date {
+            cell.detailTextLabel?.text = dateFormatter.string(from: date)
+        }
+        
+        return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showExpense", sender: self)
+    }
+    
+   
     
 
     /*
